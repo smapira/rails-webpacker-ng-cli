@@ -27,6 +27,7 @@ Things you may want to cover:
 ## Command line Note:
 ```
 rails new rails-webpacker-ng-cli --webpack=angular
-
+bundle exec rails webpacker:install
+bundle exec rails webpacker:install:angular
 
 ```
