@@ -22,3 +22,11 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+## Command line Note:
+```
+rails new rails-webpacker-ng-cli --webpack=angular
+
+
+```
