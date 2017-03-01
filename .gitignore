@@ -26,5 +26,5 @@ vendor/*
 tmp/*
 log/*
 bin/*/public/packs
-/node_modules
 yarn.lock
+bin/*
