@@ -22,15 +22,32 @@ const config = {
     }, {}
   ),
 
-  output: { filename: '[name].js', path: path.resolve('public', distDir) },
+  output: {
+    filename: '[name].js', path: path.resolve('public', distDir)
+  },
 
   module: {
     rules: [
-      { test: /.ts$/, loader: 'ts-loader' },
+      {
+        test: /\.html$/,
+        use: [{
+          loader: 'html-loader',
+          options: {
+            minimize: true,
+            removeComments: false,
+            collapseWhitespace: false
+          }
+        }],
+      },
+      {
+        test: /.ts$/,
+        loader: 'ts-loader',
+        exclude: /(node_modules|e2e)/,
+      },
       { test: /\.coffee(\.erb)?$/, loader: 'coffee-loader' },
       {
         test: /\.js(\.erb)?$/,
-        exclude: /node_modules/,
+        exclude: /(node_modules|e2e)/,
         loader: 'babel-loader',
         options: {
           presets: [
@@ -51,7 +68,7 @@ const config = {
   },
 
   plugins: [
-    new webpack.EnvironmentPlugin(Object.keys(process.env))
+    new webpack.EnvironmentPlugin(Object.keys(process.env)),
   ],
 
   resolve: {
@@ -71,3 +88,5 @@ module.exports = {
   distDir,
   config
 }
+
+process.traceDeprecation = true;

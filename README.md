@@ -24,10 +24,23 @@ Things you may want to cover:
 * ...
 
 
-## Command line Note:
+## History Command line :
 ```
-rails new rails-webpacker-ng-cli --webpack=angular
+rails new rails-webpacker-ng-cli
+cd rails-webpacker-ng-cli
 bundle exec rails webpacker:install
 bundle exec rails webpacker:install:angular
+bundle exec rails g controller pages index
+bin/webpack
+bundle exec rails s
+
+// create ng cli project
+mv package.json package2.json
+cd app/javascript
+../../node_modules/.bin/ng new hello-ng-cli --style=scss
+rm -fr hello-ng-cli/node_modules
+cd -
+mv package2.json package.json
+bin/webpack
 
 ```
