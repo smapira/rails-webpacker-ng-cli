@@ -1,10 +1,10 @@
-import { HelloNgCliPage } from './app.po';
+import { FrontendPage } from './app.po';
 
-describe('hello-ng-cli App', function() {
-  let page: HelloNgCliPage;
+describe('frontend App', function() {
+  let page: FrontendPage;
 
   beforeEach(() => {
-    page = new HelloNgCliPage();
+    page = new FrontendPage();
   });
 
   it('should display message saying app works', () => {

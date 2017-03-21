@@ -14,7 +14,7 @@
     "@angular/forms": "^2.4.9",
     "@angular/http": "^2.4.9",
     "@angular/platform-browser": "^2.4.8",
-    "@angular/platform-browser-dynamic": "^2.4.8",
+    "@angular/platform-browser-dynamic": "^2.4.10",
     "@angular/router": "3.2.3",
     "@types/jquery": "^2.0.41",
     "@types/selenium-webdriver": "^3.0.0",
