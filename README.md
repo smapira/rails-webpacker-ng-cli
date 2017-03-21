@@ -42,5 +42,5 @@ rm -fr hello-ng-cli/node_modules
 cd -
 mv package2.json package.json
 bin/webpack
-
+bundle exec rails s
 ```

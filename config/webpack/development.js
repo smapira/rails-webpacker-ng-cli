@@ -3,7 +3,7 @@
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 
-const sharedConfig = require('./shared.js')
+const sharedConfig = require('./shared.es')
 
 module.exports = merge(sharedConfig.config, {
   devtool: 'sourcemap',

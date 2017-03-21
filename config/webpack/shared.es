@@ -23,35 +23,53 @@ const config = {
   ),
 
   output: {
-    filename: '[name].js', path: path.resolve('public', distDir)
+    filename: '[name].js',
+    path: path.resolve('public', distDir),
+    publicPath: '/' + distDir + '/',
   },
 
   module: {
     rules: [
       {
+        test: /\.(png|gif|jpg|svg)$/,
+        use: "file-loader?name=images/[name].[ext]"
+      },
+      {
+        test: /\.scss$/,
+        use: [{
+          loader: 'to-string-loader'
+        }, {
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader'
+        }, {
+          loader: 'sass-loader'
+        }]
+      },
+      {
         test: /\.html$/,
         use: [{
           loader: 'html-loader',
           options: {
-            minimize: true,
+            minimize: false,
             removeComments: false,
-            collapseWhitespace: false
+            collapseWhitespace: false,
           }
         }],
       },
       {
         test: /.ts$/,
         loader: 'ts-loader',
-        exclude: /(node_modules|e2e)/,
+        exclude: [/\.(spec|e2e)\.ts$/]
       },
-      { test: /\.coffee(\.erb)?$/, loader: 'coffee-loader' },
+      {test: /\.coffee(\.erb)?$/, loader: 'coffee-loader'},
       {
         test: /\.js(\.erb)?$/,
         exclude: /(node_modules|e2e)/,
         loader: 'babel-loader',
         options: {
           presets: [
-            ['latest', { es2015: { modules: false } }]
+            ['latest', {es2015: {modules: false}}]
           ]
         }
       },
@@ -81,7 +99,8 @@ const config = {
 
   resolveLoader: {
     modules: [path.resolve('node_modules')]
-  }
+  },
+
 }
 
 module.exports = {

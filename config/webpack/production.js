@@ -4,7 +4,7 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const compressionPlugin = require('compression-webpack-plugin')
 
-const sharedConfig = require('./shared.js')
+const sharedConfig = require('./shared.es')
 
 module.exports = merge(sharedConfig.config, {
   output: { filename: '[name]-[chunkhash].js' },
