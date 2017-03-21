@@ -34,6 +34,19 @@ const config = {
         test: /\.(png|gif|jpg|svg)$/,
         use: "file-loader?name=images/[name].[ext]"
       },
+      {test: /\.svg$/, loader: 'url-loader?mimetype=image/svg+xml'},
+      {test: /\.woff$/, loader: 'url-loader?mimetype=application/font-woff'},
+      {test: /\.woff2$/, loader: 'url-loader?mimetype=application/font-woff'},
+      {test: /\.eot$/, loader: 'url-loader?mimetype=application/font-woff'},
+      {test: /\.ttf$/, loader: 'url-loader?mimetype=application/font-woff'},
+      {
+        test: /\.css$/,
+        use: [{
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader'
+        }]
+      },
       {
         test: /\.scss$/,
         use: [{
@@ -65,7 +78,7 @@ const config = {
       {test: /\.coffee(\.erb)?$/, loader: 'coffee-loader'},
       {
         test: /\.js(\.erb)?$/,
-        exclude: /(node_modules|e2e)/,
+        exclude: [/\.(spec|e2e)\.js$/],
         loader: 'babel-loader',
         options: {
           presets: [
@@ -87,6 +100,11 @@ const config = {
 
   plugins: [
     new webpack.EnvironmentPlugin(Object.keys(process.env)),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      jquery: "jquery"
+    })
   ],
 
   resolve: {
@@ -94,7 +112,7 @@ const config = {
     modules: [
       path.resolve('app/javascript'),
       path.resolve('node_modules')
-    ]
+    ],
   },
 
   resolveLoader: {
