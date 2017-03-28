@@ -6,9 +6,9 @@ jobs:
       - image: ruby:2.3
       - image: postgres:9.4.1
         environment:
-          POSTGRES_USER: root
           - DISPLAY=:99
           - CHROME_BIN=/usr/bin/google-chrome
+          POSTGRES_USER: root
     working_directory: ~/cci-demo-rails-webpacker-ng-cli
     steps:
       - checkout
