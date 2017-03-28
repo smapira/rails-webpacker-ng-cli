@@ -1,4 +1,5 @@
 # README
+[![CircleCI](https://circleci.com/gh/smapira/rails-webpacker-ng-cli.svg?style=svg)](https://circleci.com/gh/smapira/rails-webpacker-ng-cli)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
