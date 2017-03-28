@@ -4,9 +4,6 @@ jobs:
   build:
     docker:
       - image: ruby:2.3
-      - image: postgres:9.4.1
-        environment:
-          POSTGRES_USER: root
       - image: node:7.4.0
         environment:
           - DISPLAY=:99
