@@ -5,7 +5,13 @@
   "license": "GPL",
   "private": true,
   "scripts": {
-    "build": "bin/webpack"
+    "build": "bin/webpack",
+    "ng": "ng",
+    "start": "cd app/javascript/hello-ng-cli && ng serve",
+    "test": "cd app/javascript/hello-ng-cli && ng test",
+    "pree2e": "cd app/javascript/hello-ng-cli && webdriver-manager update --standalone false --gecko false",
+    "e2e": "cd app/javascript/hello-ng-cli && protractor",
+    "lint": "cd app/javascript/hello-ng-cli && ng lint"
   },
   "dependencies": {
     "@angular/common": "^2.4.8",
@@ -19,7 +25,6 @@
     "@types/jquery": "^2.0.41",
     "@types/selenium-webdriver": "^3.0.0",
     "admin-lte": "^2.3.11",
-    "angular-cli": "^1.0.0-beta.28.3",
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
     "babel-preset-latest": "^6.22.0",
@@ -47,7 +52,8 @@
     "zone.js": "^0.7.7"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "2.2.3",
+    "@angular/cli": "latest",
+    "@angular/compiler-cli": "latest",
     "@types/jasmine": "2.5.38",
     "codelyzer": "~2.0.0-beta.1",
     "eslint": "^3.18.0",

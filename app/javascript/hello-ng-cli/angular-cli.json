@@ -1,0 +1,78 @@
+{
+  "project": {
+    "version": "1.0.0-beta.28.3",
+    "name": "frontend"
+  },
+  "apps": [
+    {
+      "root": "app/javascript/hello-ng-cli/src",
+      "outDir": "app/javascript/hello-ng-cli/dist",
+      "assets": [
+        "app/javascript/hello-ng-cli/src/assets",
+        "app/javascript/hello-ng-cli/src/favicon.ico"
+      ],
+      "index": "./index.ts",
+      "main": "src/main.ts",
+      "polyfills": "src/polyfills.ts",
+      "test": "./src/test.ts",
+      "tsconfig": "./src/tsconfig.json",
+      "prefix": "app",
+      "styles": [
+        "node_modules/admin-lte/dist/css/AdminLTE.min.css",
+        "node_modules/admin-lte/bootstrap/css/bootstrap.min.css",
+        "node_modules/admin-lte/dist/css/skins/_all-skins.min.css",
+        "styles.scss"
+      ],
+      "scripts": [
+        "node_modules/admin-lte/plugins/jQuery/jquery-2.2.3.min.js",
+        "node_modules/admin-lte/bootstrap/js/bootstrap.min.js",
+        "node_modules/admin-lte/dist/js/app.min.js",
+        "node_modules/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js",
+        "node_modules/admin-lte/plugins/fastclick/fastclick.js",
+        "node_modules/admin-lte/dist/js/demo.js",
+        "node_modules/bootstrap/js/modal.js"
+      ],
+      "environments": {
+        "source": "app/javascript/hello-ng-cli/src/environments/environment.ts",
+        "dev": "app/javascript/hello-ng-cli/src/environments/environment.ts",
+        "prod": "app/javascript/hello-ng-cli/src/environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "app/javascript/hello-ng-cli/src/protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "files": "app/javascript/hello-ng-cli/src/**/*.ts",
+      "project": "app/javascript/hello-ng-cli/src/tsconfig.json"
+    },
+    {
+      "files": "app/javascript/hello-ng-cli/e2e/**/*.ts",
+      "project": "app/javascript/hello-ng-cli/e2e/tsconfig.json"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "scss",
+    "prefixInterfaces": false,
+    "inline": {
+      "style": false,
+      "template": false
+    },
+    "spec": {
+      "class": false,
+      "component": true,
+      "directive": true,
+      "module": false,
+      "pipe": true,
+      "service": true
+    }
+  }
+}

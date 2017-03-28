@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: node:7.4.0
+    working_directory: ~/cci-demo-rails-webpacker-ng-cli
+    steps:
+      - checkout
+      - run:
+          name: Pre-Dependencies
+          command: mkdir -p ~/cci-demo-react/artifacts
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: NPM Test
+          command: npm test
+      - run:
+          name: NPM Lint
+          command: npm lint
+      - store_artifacts:
+          path: ~/cci-demo-rails-webpacker-ng-cli/artifacts

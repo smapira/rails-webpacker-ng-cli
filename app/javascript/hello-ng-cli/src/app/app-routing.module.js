@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var router_1 = require("@angular/router");
 exports.appRoutes = [
     {
@@ -7,9 +7,9 @@ exports.appRoutes = [
         children: [
             {
                 path: '',
-                loadChildren: 'app/pages/dashboard/dashboard.module#DashboardModule'
+                loadChildren: 'app/pages/dashboard/dashboard.module#DashboardModule',
             }
         ]
     },
 ];
-exports.routing = router_1.RouterModule.forRoot(exports.appRoutes, { useHash: true });
+exports.routing = router_1.RouterModule.forRoot(exports.appRoutes);

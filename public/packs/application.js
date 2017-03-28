@@ -63,12 +63,12 @@
 /******/ 	__webpack_require__.p = "/packs/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 707);
+/******/ 	return __webpack_require__(__webpack_require__.s = 706);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 707:
+/***/ 706:
 /* unknown exports provided */
 /* all exports used */
 /*!*********************************************!*\

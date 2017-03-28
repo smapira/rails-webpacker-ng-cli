@@ -30,15 +30,8 @@ const config = {
 
   module: {
     rules: [
-      {
-        test: /\.(png|gif|jpg|svg)$/,
-        use: "file-loader?name=images/[name].[ext]"
-      },
-      {test: /\.svg$/, loader: 'url-loader?mimetype=image/svg+xml'},
-      {test: /\.woff$/, loader: 'url-loader?mimetype=application/font-woff'},
-      {test: /\.woff2$/, loader: 'url-loader?mimetype=application/font-woff'},
-      {test: /\.eot$/, loader: 'url-loader?mimetype=application/font-woff'},
-      {test: /\.ttf$/, loader: 'url-loader?mimetype=application/font-woff'},
+      {test: /\.(png|gif|jpg|svg)$/, use: 'file-loader?name=images/[name].[ext]'},
+      {test: /\.(woff|woff2|eot|ttf)$/, loader: 'url-loader?mimetype=application/font-woff'},
       {
         test: /\.css$/,
         use: [{
@@ -70,15 +63,11 @@ const config = {
           }
         }],
       },
-      {
-        test: /.ts$/,
-        loader: 'ts-loader',
-        exclude: [/\.(spec|e2e)\.ts$/]
-      },
+      {test: /.ts$/, loader: 'ts-loader', exclude: [/(\.(spec|e2e)\.ts$|node_modules)/]},
       {test: /\.coffee(\.erb)?$/, loader: 'coffee-loader'},
       {
         test: /\.js(\.erb)?$/,
-        exclude: [/\.(spec|e2e)\.js$/],
+        exclude: [/(\.(spec|e2e)\.js$|node_modules)/],
         loader: 'babel-loader',
         options: {
           presets: [
@@ -101,9 +90,9 @@ const config = {
   plugins: [
     new webpack.EnvironmentPlugin(Object.keys(process.env)),
     new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-      jquery: "jquery"
+      $: 'jquery',
+      jQuery: 'jquery',
+      jquery: 'jquery'
     })
   ],
 
