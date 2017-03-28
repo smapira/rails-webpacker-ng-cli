@@ -8,7 +8,7 @@ jobs:
         environment:
           - DISPLAY=:99
           - CHROME_BIN=/usr/bin/google-chrome
-    working_directory: ~/cci-demo-rails-webpacker-ng-cli
+    working_directory: ~/cci-rails-webpacker-ng-cli
     steps:
       - checkout
       - run:
@@ -22,10 +22,10 @@ jobs:
           command: bundle exec rake test
       - run:
           name: Install Dependencies
-          command: yarn install
+          command: bin/yarn install
       - run:
           name: NPM Test
-          command: yarn test
+          command: bin/yarn test
       - run:
           name: NPM Lint
-          command: yarn run lint
+          command: bin/yarn run lint
