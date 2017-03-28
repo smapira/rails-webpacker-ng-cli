@@ -3,6 +3,7 @@ jobs:
   build:
     docker:
       - image: node:7.6.0
+    working_directory: ~/cci-demo-rails-webpacker-ng-cli
     steps:
       - checkout
       - run:
