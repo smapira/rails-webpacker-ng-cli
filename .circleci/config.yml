@@ -20,12 +20,12 @@ jobs:
       - run:
           name: Install Ruby Dependencies
           command: bundle install
-      - run:
-          name: Create DB
-          command: bundle exec rake db:create db:schema:load --trace
-      - run:
-          name: DB Migrations
-          command: bundle exec rake db:migrate
+#      - run:
+#          name: Create DB
+#          command: bundle exec rake db:create db:schema:load --trace
+#      - run:
+#          name: DB Migrations
+#          command: bundle exec rake db:migrate
       - run:
           name: Run Tests
           command: bundle exec rake test
