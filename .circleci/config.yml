@@ -18,4 +18,4 @@ jobs:
           command: npm test
       - run:
           name: NPM Lint
-          command: npm lint
+          command: npm run lint
