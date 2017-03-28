@@ -19,6 +19,9 @@ jobs:
       - run:
           name: Run Tests
           command: bundle exec rake test
+     - run:
+          name: Run Specs
+          command: bundle exec rake spec
       - run:
           name: Install Dependencies
           command: bin/yarn install
