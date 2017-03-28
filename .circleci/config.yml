@@ -4,7 +4,10 @@ jobs:
   build:
     docker:
       - image: node:7.6.0
-        env:
+      - image: ruby:2.3
+      - image: postgres:9.4.1
+        environment:
+          POSTGRES_USER: root
           - DISPLAY=:99
           - CHROME_BIN=/usr/bin/google-chrome
     working_directory: ~/cci-demo-rails-webpacker-ng-cli
@@ -19,3 +22,18 @@ jobs:
       - run:
           name: NPM Lint
           command: npm run lint
+      - run:
+          name: Install System Dependencies
+          command: apt-get update -qq && apt-get install -y build-essential nodejs
+      - run:
+          name: Install Ruby Dependencies
+          command: bundle install
+      - run:
+          name: Create DB
+          command: bundle exec rake db:create db:schema:load --trace
+      - run:
+          name: DB Migrations
+          command: bundle exec rake db:migrate
+      - run:
+          name: Run Tests
+          command: bundle exec rake test
