@@ -17,21 +17,15 @@ jobs:
       - run:
           name: Install Ruby Dependencies
           command: bundle install
-#      - run:
-#          name: Create DB
-#          command: bundle exec rake db:create db:schema:load --trace
-#      - run:
-#          name: DB Migrations
-#          command: bundle exec rake db:migrate
       - run:
           name: Run Tests
           command: bundle exec rake test
       - run:
           name: Install Dependencies
-          command: npm install
+          command: yarn install
       - run:
           name: NPM Test
-          command: npm test
+          command: yarn test
       - run:
           name: NPM Lint
-          command: npm run lint
+          command: yarn run lint
