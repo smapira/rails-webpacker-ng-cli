@@ -3,7 +3,6 @@ version: 2
 jobs:
   build:
     docker:
-      - image: node:7.6.0
       - image: ruby:2.3
       - image: postgres:9.4.1
         environment:
@@ -13,15 +12,6 @@ jobs:
     working_directory: ~/cci-demo-rails-webpacker-ng-cli
     steps:
       - checkout
-      - run:
-          name: Install Dependencies
-          command: npm install
-      - run:
-          name: NPM Test
-          command: npm test
-      - run:
-          name: NPM Lint
-          command: npm run lint
       - run:
           name: Install System Dependencies
           command: apt-get update -qq && apt-get install -y build-essential nodejs
@@ -37,3 +27,12 @@ jobs:
       - run:
           name: Run Tests
           command: bundle exec rake test
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: NPM Test
+          command: npm test
+      - run:
+          name: NPM Lint
+          command: npm run lint
