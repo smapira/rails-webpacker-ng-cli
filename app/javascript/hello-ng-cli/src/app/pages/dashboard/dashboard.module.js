@@ -23,6 +23,9 @@ DashboardModule = __decorate([
         ],
         declarations: [
             dashboard_component_1.DashboardComponent
+        ],
+        exports: [
+            dashboard_component_1.DashboardComponent,
         ]
     })
 ], DashboardModule);
