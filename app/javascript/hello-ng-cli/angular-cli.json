@@ -8,8 +8,8 @@
       "root": "src",
       "outDir": "dist",
       "assets": [
-        "./assets",
-        "./favicon.ico"
+        "assets",
+        "favicon.ico"
       ],
       "index": "../index.ts",
       "main": "main.ts",
@@ -56,7 +56,7 @@
   ],
   "test": {
     "karma": {
-      "config": "../../../karma.conf.js"
+      "config": "karma.conf.js"
     }
   },
   "defaults": {

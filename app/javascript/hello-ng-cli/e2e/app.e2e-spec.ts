@@ -1,4 +1,5 @@
 import { FrontendPage } from './app.po';
+import {} from 'jasmine';
 
 describe('frontend App', function() {
   let page: FrontendPage;
@@ -9,6 +10,6 @@ describe('frontend App', function() {
 
   it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect<any>(page.getParagraphText()).toEqual('app works!');
   });
 });
