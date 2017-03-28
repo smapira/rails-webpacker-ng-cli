@@ -8,7 +8,7 @@
     "build": "bin/webpack",
     "ng": "ng",
     "start": "cd app/javascript/hello-ng-cli && ng serve",
-    "test": "karma start app/javascript/hello-ng-cli/karma.conf.js",
+    "test": "karma start app/javascript/hello-ng-cli/karma.conf.js --single-run",
     "lint": "tslint -c tslint.json 'app/javascript/**/*.ts'",
     "pree2e": "cd app/javascript/hello-ng-cli && webdriver-manager update --standalone false --gecko false",
     "e2e": "cd app/javascript/hello-ng-cli && protractor"
