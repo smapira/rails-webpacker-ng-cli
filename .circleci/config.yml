@@ -19,7 +19,7 @@ jobs:
       - run:
           name: Run Tests
           command: bundle exec rake test
-     - run:
+      - run:
           name: Run Specs
           command: bundle exec rake spec
       - run:
