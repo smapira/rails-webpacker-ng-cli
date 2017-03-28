@@ -12,10 +12,10 @@ module.exports = function (config) {
       require('@angular/cli/plugins/karma')
     ],
     files: [
-      {pattern: './src/test.ts', watched: false}
+      {pattern: './app/javascript/hello-ng-cli/src/test.ts', watched: false}
     ],
     preprocessors: {
-      './src/test.ts': ['@angular/cli']
+      './app/javascript/hello-ng-cli/src/test.ts': ['@angular/cli']
     },
     mime: {
       'text/x-typescript': ['ts', 'tsx']
@@ -25,6 +25,10 @@ module.exports = function (config) {
         html: 'coverage',
         lcovonly: './coverage/coverage.lcov'
       }
+    },
+    angularCli: {
+      config: './app/javascript/hello-ng-cli/angular-cli.json',
+      environment: 'dev'
     },
     reporters: config.angularCli && config.angularCli.codeCoverage
       ? ['progress', 'karma-remap-istanbul']
