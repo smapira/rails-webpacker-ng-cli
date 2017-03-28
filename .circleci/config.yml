@@ -3,8 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: ruby:2.3
-      - image: node:7.4.0
+      - image: ruby:2.4
         environment:
           - DISPLAY=:99
           - CHROME_BIN=/usr/bin/google-chrome
