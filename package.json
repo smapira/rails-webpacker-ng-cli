@@ -9,9 +9,9 @@
     "ng": "ng",
     "start": "cd app/javascript/hello-ng-cli && ng serve",
     "test": "karma start app/javascript/hello-ng-cli/karma.conf.js",
-    "lint": "tslint -c tslint.json 'app/javascript/**/*.ts'"
+    "lint": "tslint -c tslint.json 'app/javascript/**/*.ts'",
     "pree2e": "cd app/javascript/hello-ng-cli && webdriver-manager update --standalone false --gecko false",
-    "e2e": "cd app/javascript/hello-ng-cli && protractor",
+    "e2e": "cd app/javascript/hello-ng-cli && protractor"
   },
   "dependencies": {
     "@angular/common": "^2.4.8",
