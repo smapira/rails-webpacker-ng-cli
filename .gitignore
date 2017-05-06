@@ -30,3 +30,4 @@ yarn.lock
 bin/*
 public/packs/*
 npm-debug.log
+dist/*
